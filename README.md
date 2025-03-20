@@ -1,2 +1,2 @@
 # adelaide-fringe-booking
-Online booking system for Adelaide Fringe Festival
+Online booking system for Adelaide Fringe Festival for developers
