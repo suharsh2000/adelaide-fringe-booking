@@ -1,0 +1,28 @@
+services:
+  frontend:
+    build:
+      context: ./docker/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    container_name: frontend_container
+
+  backend:
+    build:
+      context: /docker/backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    container_name: backend_container
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bookingdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    container_name: mysql_db
